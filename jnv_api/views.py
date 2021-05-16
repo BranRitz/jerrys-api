@@ -5,6 +5,7 @@ from django.shortcuts import render
 
 from jnv_api.serializers import UserHistorySerializer
 from jnv_api.models import UserHistory
+from . import forms
 
 
 class AdminUserHistory(generics.ListAPIView):
@@ -45,4 +46,18 @@ class DbUserHistory(APIView):
         :return:
         """
         pass
+
+
+# Create your views here.
+def index(request):
+    return render(request, 'jnv_api/index.html')
+
+
+def form_name_view(request):
+    form = forms.AttemptForm()
+    if request.method == "POST":
+        form = forms.AttemptForm(request.POST)
+        if form.is_valid():
+            print("Word: "+form.cleaned_data['word'])
+    return render(request, 'jnv_api/form_page.html', {'form': form})
 

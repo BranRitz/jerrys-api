@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Forms</title>
+  <!-- CSS only Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+ </head>
+ <body>
+  <h1>What word would you like to practice?</h1>
+  <div class="container">
+   <form method = "POST">
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit" class="btn btn-primary" value="Submit" />
+   </form>
+      <br>
+      <a class="btn btn-primary" href="/">Return Home</a>
+
+  </div>
+ </body>
+</html>

@@ -1,0 +1,6 @@
+**.idea/**
+jerrys_new_voice/__pycache__/
+jnv_api/__pycache__/
+jerrys_new_voice/.idea/
+jnv_api/.idea/
+jnv_api/migrations/__pycache__/

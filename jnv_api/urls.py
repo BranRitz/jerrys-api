@@ -7,7 +7,8 @@ from rest_framework.urlpatterns import format_suffix_patterns
 urlpatterns = [
     path('', views.index),
     path('admin/', admin.site.urls),
-    path('word-attempt/',  views.form_name_view),
+    path('word-attempt/', views.word_attempt_view),
+    url(r'^signup/$', views.signup, name='signup'),
     url(r'^v1/admin/user-history', views.AdminUserHistory.as_view()),
     url(r'^v1/user-history', views.DbUserHistory.as_view()),
 

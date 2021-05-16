@@ -1,11 +1,14 @@
 from rest_framework import generics
 from rest_framework.views import APIView
-
-from django.shortcuts import render
+from django.contrib.auth.models import User
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 
 from jnv_api.serializers import UserHistorySerializer
 from jnv_api.models import UserHistory
-from . import forms
+from jnv_api.forms import SignUpForm, AttemptForm
 
 
 class AdminUserHistory(generics.ListAPIView):
@@ -48,16 +51,30 @@ class DbUserHistory(APIView):
         pass
 
 
-# Create your views here.
+@login_required
 def index(request):
     return render(request, 'jnv_api/index.html')
 
-
-def form_name_view(request):
-    form = forms.AttemptForm()
+@login_required
+def word_attempt_view(request):
+    form = AttemptForm()
     if request.method == "POST":
-        form = forms.AttemptForm(request.POST)
+        form = AttemptForm(request.POST)
         if form.is_valid():
             print("Word: "+form.cleaned_data['word'])
     return render(request, 'jnv_api/form_page.html', {'form': form})
 
+
+def signup(request):
+    if request.method == 'POST':
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('/')
+    else:
+        form = SignUpForm()
+    return render(request, 'jnv_api/signup.html', {'form': form})

@@ -2,3 +2,5 @@ django==3.0.14
 djangorestframework==3.11
 psycopg2
 requests
+django-jquery
+SpeechRecognition

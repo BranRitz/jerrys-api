@@ -1,20 +1,54 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
  <head>
   <meta charset="utf-8">
-  <title>Forms</title>
-  <!-- CSS only Bootstrap -->
+  <title>Select Word</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <style>
+    .custom-radio-list {
+        list-style-type: none;
+        padding-left: 30px;
+    }
+    .custom-drop-list {
+        margin-left: 30px;
+    }
+
+    .btn {
+        margin-left: 30px;
+        margin-bottom: 30px;
+    }
+
+    ul#id_level li {
+      display: inline-block;
+    }
+
+    .whole-page {
+        outline: 200px solid #FFFFFF;
+        margin-left: 30px;
+        margin-right: 30px;
+        border-bottom: solid #778899;
+
+    }
+
+    .page-title {
+        color: #778899;
+    }
+    </style>
  </head>
+
  <body>
-  <h1>What word would you like to practice?</h1>
-  <div class="container">
+ <div class="whole-page">
    <form method = "POST">
-    {{form.as_p}}
+       <h2 class="page-title">What would you like to practice?</h2>
+       <h6>Category:</h6>
+       {{ form.category }}<br><br>
+       <h6>Level:</h6>
+       {{ form.level }}
+
     {% csrf_token %}
-    <input type="submit" class="btn btn-primary" value="Submit" />
+    <input type="submit" class="btn btn-primary" value="Next" />
    </form>
-      <br>
       <a class="btn btn-primary" href="/">Return Home</a>
 
   </div>

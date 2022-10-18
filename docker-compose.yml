@@ -9,7 +9,7 @@ services:
     - "8000:8000"
     depends_on:
       - db
-    container_name: jnv-api
+    container_name: survey-api
 
   db:
     image: postgres:13.2
@@ -19,7 +19,7 @@ services:
       - "POSTGRES_HOST_AUTH_METHOD=trust"
     ports:
     - "5432:5432"
-    container_name: jnv-postgres
+    container_name: survey-postgres
 
 volumes:
   postgres_data:

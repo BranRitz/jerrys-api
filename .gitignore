@@ -1,6 +1,6 @@
 **.idea/**
-jerrys_new_voice/__pycache__/
-jnv_api/__pycache__/
-jerrys_new_voice/.idea/
-jnv_api/.idea/
-jnv_api/migrations/__pycache__/
+bdk_survey_mgmt/__pycache__/
+survey_api/__pycache__/
+bdk_survey_mgmt/.idea/
+survey_api/.idea/
+survey_api/migrations/__pycache__/

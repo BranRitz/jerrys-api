@@ -1,5 +1,5 @@
 """
-ASGI config for jerrys_new_voice project.
+ASGI config for bdk_survey_mgmt project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'jerrys_new_voice.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bdk_survey_mgmt.settings')
 
 application = get_asgi_application()

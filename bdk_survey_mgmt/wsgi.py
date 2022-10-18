@@ -1,5 +1,5 @@
 """
-WSGI config for jerrys_new_voice project.
+WSGI config for bdk_survey_mgmt project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'jerrys_new_voice.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bdk_survey_mgmt.settings')
 
 application = get_wsgi_application()

@@ -33,6 +33,7 @@ CSRF_COOKIE_HTTPONLY = True
 # Application definition
 
 INSTALLED_APPS = [
+    # 'forms_builder.forms'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'survey_api.apps.BdkSurveyMgmtConfig',
 ]
 
 MIDDLEWARE = [

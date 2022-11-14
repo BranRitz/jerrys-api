@@ -3,3 +3,4 @@ djangorestframework==3.11
 psycopg2
 requests
 django-jquery
+django-forms-builder
